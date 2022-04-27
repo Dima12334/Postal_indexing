@@ -1,0 +1,21 @@
+﻿<Window x:Class="Postal_indexing.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Postal_indexing"
+        mc:Ignorable="d"
+        Title="Реєстраційне вікно" Height="450" Width="800">
+    <Grid>
+        <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="800" Background="#FF678CFD">
+            <Label Content="Реєстраційне вікно" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="258" FontFamily="Modern No. 20" FontSize="22"/>
+        </Border>
+        <Label Content="Ім'я : " HorizontalAlignment="Left" Height="38" Margin="102,147,0,0" VerticalAlignment="Top" Width="139" FontFamily="Modern No. 20" FontSize="18"/>
+        <Label Content="Пароль : " HorizontalAlignment="Left" Height="31" Margin="68,228,0,0" VerticalAlignment="Top" Width="86" FontFamily="Modern No. 20" FontSize="18"/>
+        <TextBox x:Name="login" HorizontalAlignment="Left" Height="28" Margin="172,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18" FontStretch="Normal"/>
+        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="28" Margin="172,230,0,0" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18" />
+        <Button x:Name="main_page" Content="Головна сторінка" HorizontalAlignment="Center" Height="46" Margin="0,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="main_page_Click"/>
+        <Button x:Name="register" Content="Зареєструватися" HorizontalAlignment="Left" Height="46" Margin="580,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="register_Click"/>
+        <Button x:Name="auth" Content="Вхід" HorizontalAlignment="Left" Height="46" Margin="37,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="auth_Click"/>
+    </Grid>
+</Window>
