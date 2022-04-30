@@ -74,6 +74,7 @@ namespace Postal_indexing
                     MessageBox.Show("Сталася помилка!");
                     MessageBox.Show(ex.Message.ToString());
                 }
+
                 Edit ed = new Edit();
                 ed.Show();
                 Close();
