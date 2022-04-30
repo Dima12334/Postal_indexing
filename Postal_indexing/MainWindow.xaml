@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
-        Title="Довідник поштової індексації" Height="700" Width="1300">
+        Title="Довідник поштової індексації" Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Країна : " HorizontalAlignment="Left" Height="38" Margin="10,123,0,0" VerticalAlignment="Top" Width="139" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Область (край) : " HorizontalAlignment="Left" Height="32" Margin="265,123,0,0" VerticalAlignment="Top" Width="154" FontFamily="Modern No. 20" FontSize="18"/>
@@ -19,6 +20,6 @@
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Center" Height="101" VerticalAlignment="Top" Width="1300" Background="#FF678CFD">
             <Label Content="Здійсніть пошук потрібної інформації по будь-якій сукупності полів" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="700" FontFamily="Modern No. 20" FontSize="22" Margin="0,26,0,0"/>
         </Border>
-        <ListView x:Name="ListOfPostalDirectory" Margin="10,170,234,28" FontFamily="Ariel" FontSize="18"/>
+        <ListView x:Name="ListOfPostalDirectory" Margin="10,170,467,10" FontFamily="Ariel" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderBrush="White"></ListView>
     </Grid>
 </Window>

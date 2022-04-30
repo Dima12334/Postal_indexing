@@ -21,7 +21,7 @@ namespace Postal_indexing
     {
         public Auth()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void main_page_Click(object sender, RoutedEventArgs e)
@@ -33,19 +33,9 @@ namespace Postal_indexing
 
         public void add_Click(object sender, RoutedEventArgs e)
         {
-            string name = login.Text.Trim();
-            string password = pass.Password.Trim();
-
-            if (name.Length > 0 && password.Length > 0)
-            {
-                Add update = new Add();
-                update.Show();
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Заповніть пусті поля або введіть коректні данні");
-            }
+            Add update = new Add(null);
+            update.Show();
+            Close();
         }
 
         private void auth_Click(object sender, RoutedEventArgs e)
@@ -63,6 +53,8 @@ namespace Postal_indexing
                 if (authUser != null)
                 {
                     MessageBox.Show($"Вітаю, " + name + "!");
+                    edit.Visibility = Visibility.Visible;
+                    add.Visibility = Visibility.Visible;
                 }
                 else
                 {

@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
-        Title="Вікно авторизації" Height="450" Width="800">
-    <Grid>
+        Title="Вікно авторизації" Height="462" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-6">
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="800" Background="#FF678CFD">
             <Label Content="Вікно авторизації" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="258" FontFamily="Modern No. 20" FontSize="22"/>
         </Border>
-        <Label Content="Ім'я : " HorizontalAlignment="Left" Height="38" Margin="102,147,0,0" VerticalAlignment="Top" Width="139" FontFamily="Modern No. 20" FontSize="18"/>
-        <Label Content="Пароль : " HorizontalAlignment="Left" Height="31" Margin="68,228,0,0" VerticalAlignment="Top" Width="86" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="login" HorizontalAlignment="Left" Height="28" Margin="172,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18" FontStretch="Normal"/>
-        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="28" Margin="172,230,0,0" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18" />
+        <Label Content="Ім'я : " HorizontalAlignment="Left" Height="38" Margin="102,143,0,0" VerticalAlignment="Top" Width="139" FontFamily="Modern No. 20" FontSize="18"/>
+        <Label Content="Пароль : " HorizontalAlignment="Left" Height="31" Margin="68,224,0,0" VerticalAlignment="Top" Width="86" FontFamily="Modern No. 20" FontSize="18"/>
+        <TextBox x:Name="login" HorizontalAlignment="Left" Height="28" Margin="172,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18" FontStretch="Normal"/>
+        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="28" Margin="172,226,0,0" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18" />
         <Button x:Name="main_page" Content="Головна сторінка" HorizontalAlignment="Center" Height="46" Margin="0,290,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="main_page_Click"/>
-        <Button x:Name="add" Content="Доповнення данних" HorizontalAlignment="Left" Height="46" Margin="426,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="add_Click"/>
+        <Button x:Name="add" Content="Доповнення данних" HorizontalAlignment="Left" Height="46" Margin="426,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="add_Click" Visibility="Hidden"/>
         <Button x:Name="auth" Content="Вхід" HorizontalAlignment="Left" Height="46" Margin="567,290,0,0" VerticalAlignment="Top" Width="167" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="auth_Click"/>
         <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="46" Margin="68,290,0,0" VerticalAlignment="Top" Width="167" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="back_Click"/>
-        <Button x:Name="edit" Content="Редагування данних" HorizontalAlignment="Left" Height="46" Margin="172,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="edit_Click"/>
+        <Button x:Name="edit" Content="Редагування данних" HorizontalAlignment="Left" Height="46" Margin="172,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="edit_Click" Visibility="Hidden"/>
     </Grid>
 </Window>

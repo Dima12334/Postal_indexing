@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Postal_indexing
 {
-    internal class Field
+    public partial class Field
     {
         private string country, region, district, city, code, address, status, timetable;
-
-        public int id { get; set; }
+        
+        public int Id { get; set; }
 
         public string Country
         {

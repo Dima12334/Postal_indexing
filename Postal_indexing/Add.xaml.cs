@@ -20,38 +20,65 @@ namespace Postal_indexing
     /// </summary>
     public partial class Add : Window
     {
-
-        public Add()
+        private Field _currentField = new Field();
+        ApplicationContext db = new ApplicationContext();
+        public Add(Field selectedField)
         {
             InitializeComponent();
+
+            if (selectedField != null)
+                _currentField = selectedField;
+
+            DataContext = _currentField;
         }
 
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void save_Click(object sender, RoutedEventArgs e)
         {
-            string country_txt = countryBox.Text.Trim();
-            string region_txt = regionBox.Text.Trim();
-            string district_txt = districtBox.Text.Trim();
-            string city_txt = cityBox.Text.Trim();
-            string code_txt = codeBox.Text.Trim();
-            string address_txt = addressBox.Text.Trim();
-            string status_txt = statusBox.Text.Trim();
-            string timetable_txt = timetableBox.Text.Trim();
-
-            if (country_txt.Length > 0 && region_txt.Length > 0 && district_txt.Length > 0 && city_txt.Length > 0 && code_txt.Length > 0 && address_txt.Length > 0 && status_txt.Length > 0 && timetable_txt.Length > 0)
-            {
-                using (ApplicationContext db = new ApplicationContext())
-                {
-                    Field field = new Field(country_txt, region_txt, district_txt, city_txt, code_txt, address_txt, status_txt, timetable_txt);
-                    db.Fields.Add(field);
-                    db.SaveChanges();
-                }
-
-                MessageBox.Show("Дані збережено!");
-            }
-            else
+            if (_currentField.Country.Length == 0 || _currentField.District.Length == 0 || _currentField.Address.Length == 0 || _currentField.City.Length == 0 || _currentField.Status.Length == 0 || _currentField.Timetable.Length == 0 || _currentField.Region.Length == 0 || _currentField.Code.Length == 0)
             {
                 MessageBox.Show("Всі поля повинні бути заповнені!");
+                return;
             }
+
+            if (_currentField.Id == 0)
+            {
+                db.Fields.Add(_currentField);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }                                          
+
+            if (_currentField.Id > 0)
+            {
+                var field = db.Fields.SingleOrDefault(x => x.Id == _currentField.Id);
+                field.Country = countryBox.Text;
+                field.Region = regionBox.Text;
+                field.District = districtBox.Text;
+                field.City = cityBox.Text;
+                field.Code = codeBox.Text;
+                field.Address = addressBox.Text;
+                field.Status = statusBox.Text;
+                field.Timetable = timetableBox.Text;
+                try
+                {                   
+                    db.SaveChanges();
+                    MessageBox.Show("Дані збережено!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Сталася помилка!");
+                    MessageBox.Show(ex.Message.ToString());
+                }
+                Edit ed = new Edit();
+                ed.Show();
+                Close();
+            }
+            
         }
 
         private void back_Click(object sender, RoutedEventArgs e)

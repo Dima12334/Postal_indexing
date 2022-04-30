@@ -11,7 +11,7 @@ namespace Postal_indexing
     {
         private string name, password;
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string Name
         {

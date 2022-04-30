@@ -20,10 +20,10 @@ namespace Postal_indexing
     /// </summary>
     public partial class Register : Window
     {
-
+        ApplicationContext db = new ApplicationContext();
         public Register()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void main_page_Click(object sender, RoutedEventArgs e)
@@ -39,28 +39,25 @@ namespace Postal_indexing
             string password = pass.Password.Trim();
 
             User authUser = null;
-            using (ApplicationContext db = new ApplicationContext())
-            {
-                authUser = db.Users.Where(user => user.Name == name && user.Password == password).FirstOrDefault();
-            }
+            authUser = db.Users.Where(user => user.Name == name && user.Password == password).FirstOrDefault();
+            
             if (name.Length>0 && password.Length > 0 && authUser == null)
             {
-                using (ApplicationContext db = new ApplicationContext())
+                User user = new User(name, password);
+                db.Users.Add(user);
+                try
                 {
-                    User user = new User(name, password);
-                    db.Users.Add(user);
                     db.SaveChanges();
+                    MessageBox.Show("Реєстрацація пройшла успішно!");
                 }
-
-                MessageBox.Show("Реєстрацація пройшла успішно!");                          
+                catch (Exception)
+                {
+                    MessageBox.Show("Заповніть пусті поля або поверніться на початкову сторінку");
+                }                          
             }
-            else if(authUser != null)
+            if(authUser != null)
             {
                 MessageBox.Show("Такий адмін уже існує!");
-            }
-            else
-            {
-                MessageBox.Show("Заповніть пусті поля або поверніться на початкову сторінку");
             }
         }
 

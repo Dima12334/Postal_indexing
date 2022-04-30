@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
-        Title="Реєстраційне вікно" Height="450" Width="800">
+        Title="Реєстраційне вікно" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="800" Background="#FF678CFD">
             <Label Content="Реєстраційне вікно" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="258" FontFamily="Modern No. 20" FontSize="22"/>
