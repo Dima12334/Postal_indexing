@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
-        Title="Вікно редагування" Height="700" Width="1300"
+        ResizeMode="CanMinimize"
+        Icon="Resources\icon.jpg"
+        Title="Вікно редагування даних" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Center" Height="82" VerticalAlignment="Top" Width="1300" Background="#FF678CFD">
-            <Label Content="Вікно редагування" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="202" FontFamily="Modern No. 20" FontSize="22" Margin="0,26,0,0" RenderTransformOrigin="0.5,0.5"/>
+            <Label Content="Вікно редагування даних поштової індексації" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="481" FontFamily="Modern No. 20" FontSize="22" Margin="0,26,0,0" RenderTransformOrigin="0.5,0.5"/>
         </Border>
-        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="50" Margin="60,585,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="back_Click"/>
-        <Button x:Name="main_page" Content="Головна сторінка" HorizontalAlignment="Left" Height="50" Margin="1050,585,0,0" VerticalAlignment="Top" Width="190" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="main_page_Click"/>
+        <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" Height="50" Margin="60,585,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickBack"/>
+        <Button x:Name="MainPageButton" Content="Головна сторінка" HorizontalAlignment="Left" Height="50" Margin="1050,585,0,0" VerticalAlignment="Top" Width="190" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickMainPage"/>
         <DataGrid x:Name="DGridFields" Margin="10,87,10,105" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Країна" Binding="{Binding Country}" Width="110" FontFamily="Ariel" FontSize="18"></DataGridTextColumn>
@@ -26,7 +28,7 @@
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="edit" Content="Редагування" Height="46" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="edit_Click"/>
+                            <Button x:Name="Edit" Content="Редагування" Height="46" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickEdit"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -24,26 +24,27 @@ namespace Postal_indexing
             InitializeComponent();            
         }
 
-        private void main_page_Click(object sender, RoutedEventArgs e)
+        private void ClickMainPage(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             Close();
         }
 
-        public void add_Click(object sender, RoutedEventArgs e)
+        public void ClickAdd(object sender, RoutedEventArgs e)
         {
             Add update = new Add(null);
             update.Show();
             Close();
         }
 
-        private void auth_Click(object sender, RoutedEventArgs e)
+        private void ClickAuth(object sender, RoutedEventArgs e)
         {
-            string name = login.Text.Trim();
-            string password = pass.Password.Trim();
+            string name = LoginBox.Text.Trim();
+            string password = PassBox.Password.Trim();
 
-            if (name.Length > 0 && password.Length > 0)
+            if (name.Length > 0 && name.Length <= 30 
+                && password.Length > 0 && password.Length <= 30)
             { 
                 User authUser = null;
                 using(ApplicationContext db = new ApplicationContext())
@@ -53,8 +54,8 @@ namespace Postal_indexing
                 if (authUser != null)
                 {
                     MessageBox.Show($"Вітаю, " + name + "!");
-                    edit.Visibility = Visibility.Visible;
-                    add.Visibility = Visibility.Visible;
+                    EditButton.Visibility = Visibility.Visible;
+                    AddButton.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -63,21 +64,21 @@ namespace Postal_indexing
             }
             else
             {
-                MessageBox.Show("Заповніть пусті поля або введіть коректні данні");
+                MessageBox.Show("Кільскість символів у полі повинна будти від 0 до 30!");
             }
         }
 
-        private void back_Click(object sender, RoutedEventArgs e)
+        private void ClickBack(object sender, RoutedEventArgs e)
         {
             Register reg = new Register();
             reg.Show();
             Close();
         }
 
-        private void edit_Click(object sender, RoutedEventArgs e)
+        private void ClickEdit(object sender, RoutedEventArgs e)
         {
-            Edit ed = new Edit();
-            ed.Show();
+            Edit edit = new Edit();
+            edit.Show();
             Close();
         }
     }

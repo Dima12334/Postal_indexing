@@ -5,21 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Icon="Resources\icon.jpg"
+        KeyDown="ClickHelp"
         Title="Довідник поштової індексації" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen">
     <Grid>
+        <TextBlock Text="*Щоб отримати інструкцію з користування програми, натисність клавішу F1" TextWrapping="Wrap" HorizontalAlignment="Right" Height="75" Margin="0,267,98,0" VerticalAlignment="Top" Width="271" FontFamily="Modern No. 20" FontSize="20"/>
         <Label Content="Країна : " HorizontalAlignment="Left" Height="38" Margin="10,123,0,0" VerticalAlignment="Top" Width="139" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Область (край) : " HorizontalAlignment="Left" Height="32" Margin="265,123,0,0" VerticalAlignment="Top" Width="154" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Населений пункт : " HorizontalAlignment="Left" Height="39" Margin="671,126,0,0" VerticalAlignment="Top" Width="162" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Поштовий індекс : " HorizontalAlignment="Left" Height="39" Margin="984,126,0,0" VerticalAlignment="Top" Width="164" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="country" HorizontalAlignment="Left" Height="26" Margin="88,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" FontFamily="Modern No. 20" FontSize="18" FontStretch="Normal" TextChanged="TBoxSearch_TextChanged"/>
-        <TextBox x:Name="region" HorizontalAlignment="Left" Height="28" Margin="410,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontFamily="Modern No. 20" FontSize="18" TextAlignment="Left" TextChanged="TBoxSearch_TextChanged"/>
-        <TextBox x:Name="city" HorizontalAlignment="Left" Height="28" Margin="833,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontFamily="Modern No. 20" FontSize="18" TextChanged="TBoxSearch_TextChanged"/>
-        <TextBox x:Name="code" HorizontalAlignment="Left" Height="29" Margin="1146,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontFamily="Arial" FontSize="18" RenderTransformOrigin="0.517,0.829" TextChanged="TBoxSearch_TextChanged"/>
-        <Button x:Name="register" Content="_Admin-panel" HorizontalAlignment="Left" Height="0" Margin="921,106,0,0" VerticalAlignment="Top" Width="2" FontFamily="Arial" FontSize="20" Background="#FF678CFD" Click="register_Click" BorderBrush="#FF678CFD" Foreground="#FF678CFD"/>
+        <TextBox x:Name="Country" MaxLength="30" HorizontalAlignment="Left" Height="26" Margin="88,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" FontFamily="Arial" FontSize="18" FontStretch="Normal" TextChanged="TBoxSearch_TextChanged"/>
+        <TextBox x:Name="Region" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="410,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontFamily="Arial" FontSize="18" TextAlignment="Left" TextChanged="TBoxSearch_TextChanged"/>
+        <TextBox x:Name="City" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="833,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontFamily="Arial" FontSize="18" TextChanged="TBoxSearch_TextChanged"/>
+        <TextBox x:Name="Code" MaxLength="30" HorizontalAlignment="Left" Height="29" Margin="1146,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontFamily="Arial" FontSize="18" RenderTransformOrigin="0.517,0.829" TextChanged="TBoxSearch_TextChanged"/>
+        <Button x:Name="RegisterButton" Content="_Admin-panel" HorizontalAlignment="Left" Height="0" Margin="921,106,0,0" VerticalAlignment="Top" Width="2" FontFamily="Arial" FontSize="20" Background="#FF678CFD" Click="ClickRegister" BorderBrush="#FF678CFD" Foreground="#FF678CFD"/>
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Center" Height="101" VerticalAlignment="Top" Width="1300" Background="#FF678CFD">
             <Label Content="Здійсніть пошук потрібної інформації по будь-якій сукупності полів" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="700" FontFamily="Modern No. 20" FontSize="22" Margin="0,26,0,0"/>
         </Border>
-        <ListView x:Name="ListOfPostalDirectory" Margin="10,170,467,10" FontFamily="Ariel" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderBrush="White"></ListView>
+        <ListView x:Name="ListOfPostalDirectory" Margin="10,170,500,10" FontFamily="Ariel" FontSize="18" BorderBrush="White"></ListView>
     </Grid>
 </Window>

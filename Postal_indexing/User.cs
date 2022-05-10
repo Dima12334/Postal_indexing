@@ -7,10 +7,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Postal_indexing
 {
-    internal class User 
+    public class User 
     {
-        private string name, password;
-
+        private string name;
+        private string password;
         public int Id { get; set; }
 
         public string Name
@@ -25,9 +25,13 @@ namespace Postal_indexing
             set { password = value; }
         }
 
-        public User() { }
+        public User() 
+        { 
 
-        public User(string name, string password)
+        }
+
+        public User(string name,
+            string password)
         {
             this.name = name;
             this.password = password;

@@ -26,22 +26,24 @@ namespace Postal_indexing
             InitializeComponent();            
         }
 
-        private void main_page_Click(object sender, RoutedEventArgs e)
+        private void ClickMainPage(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             Close();
         }
 
-        private void register_Click(object sender, RoutedEventArgs e)
+        private void ClickRegister(object sender, RoutedEventArgs e)
         {
-            string name = login.Text.Trim();
-            string password = pass.Password.Trim();
+            string name = LoginBox.Text.Trim();
+            string password = PassBox.Password.Trim();
 
             User authUser = null;
-            authUser = db.Users.Where(user => user.Name == name && user.Password == password).FirstOrDefault();
+            authUser = db.Users.Where(user => user.Name == name 
+            && user.Password == password).FirstOrDefault();
             
-            if (name.Length>0 && password.Length > 0 && authUser == null)
+            if (name.Length > 0 && name.Length <= 30 && password.Length > 0 
+                && password.Length <= 30 && authUser == null)
             {
                 User user = new User(name, password);
                 db.Users.Add(user);
@@ -55,13 +57,18 @@ namespace Postal_indexing
                     MessageBox.Show("Заповніть пусті поля або поверніться на початкову сторінку");
                 }                          
             }
-            if(authUser != null)
+            else
+            {
+                MessageBox.Show("Кільскість символів у полі повинна будти від 0 до 30!");
+            }
+
+            if (authUser != null)
             {
                 MessageBox.Show("Такий адмін уже існує!");
             }
         }
 
-        private void auth_Click(object sender, RoutedEventArgs e)
+        private void ClickAuth(object sender, RoutedEventArgs e)
         {
             Auth auth = new Auth();
             auth.Show();

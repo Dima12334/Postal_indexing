@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Icon="Resources\icon.jpg"
         Title="Реєстраційне вікно" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -13,10 +15,10 @@
         </Border>
         <Label Content="Ім'я : " HorizontalAlignment="Left" Height="38" Margin="102,147,0,0" VerticalAlignment="Top" Width="139" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Пароль : " HorizontalAlignment="Left" Height="31" Margin="68,228,0,0" VerticalAlignment="Top" Width="86" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="login" HorizontalAlignment="Left" Height="28" Margin="172,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18" FontStretch="Normal"/>
-        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="28" Margin="172,230,0,0" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18" />
-        <Button x:Name="main_page" Content="Головна сторінка" HorizontalAlignment="Center" Height="46" Margin="0,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="main_page_Click"/>
-        <Button x:Name="register" Content="Зареєструватися" HorizontalAlignment="Left" Height="46" Margin="580,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="register_Click"/>
-        <Button x:Name="auth" Content="Вхід" HorizontalAlignment="Left" Height="46" Margin="37,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="auth_Click"/>
+        <TextBox x:Name="LoginBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="172,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18" FontStretch="Normal"/>
+        <PasswordBox x:Name="PassBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="172,230,0,0" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18" />
+        <Button x:Name="MainPageButton" Content="Головна сторінка" HorizontalAlignment="Center" Height="46" Margin="0,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickMainPage"/>
+        <Button x:Name="RegisterButton" Content="Зареєструватися" HorizontalAlignment="Left" Height="46" Margin="580,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickRegister"/>
+        <Button x:Name="AuthButton" Content="Вхід" HorizontalAlignment="Left" Height="46" Margin="37,330,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickAuth"/>
     </Grid>
 </Window>

@@ -24,28 +24,45 @@ namespace Postal_indexing
         {
             InitializeComponent();
 
-            UpdateSearch();
+            SearchUpdate();
         }
 
-        private void UpdateSearch()
+        private void SearchUpdate()
         {
             ApplicationContext db = new ApplicationContext();
             List<Field> fields = db.Fields.ToList();
 
-            fields = fields.Where(p => p.Country.ToLower().Contains(country.Text.ToLower()) && p.Region.ToLower().Contains(region.Text.ToLower()) && p.City.ToLower().Contains(city.Text.ToLower()) && p.Code.ToLower().Contains(code.Text.ToLower())).ToList();
+            fields = fields.Where(p => p.Country.ToLower().Contains(Country.Text.ToLower()) 
+            && p.Region.ToLower().Contains(Region.Text.ToLower()) 
+            && p.City.ToLower().Contains(City.Text.ToLower()) 
+            && p.Code.ToLower().Contains(Code.Text.ToLower())).ToList();
+
             ListOfPostalDirectory.ItemsSource = fields.OrderBy(p => p.City).ToList();
         }
 
         private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            UpdateSearch();
+            SearchUpdate();
         }
 
-        private void register_Click(object sender, RoutedEventArgs e)
+        private void ClickRegister(object sender, RoutedEventArgs e)
         {
             Register reg = new Register();
             reg.Show();
             Close();
+        }
+
+        private void ClickHelp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                Help help_window = new Help();
+                if (help_window.IsActive)
+                {
+                    this.Activate();
+                }
+                help_window.Show();
+            }
         }
     }
 }

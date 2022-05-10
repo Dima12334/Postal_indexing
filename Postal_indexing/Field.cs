@@ -7,9 +7,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Postal_indexing
 {
-    public partial class Field
+    public class Field
     {
-        private string country, region, district, city, code, address, status, timetable;
+        private string country;
+        private string region;
+        private string district;
+        private string city;
+        private string code;
+        private string address;
+        private string status;
+        private string timetable;
         
         public int Id { get; set; }
 
@@ -60,11 +67,19 @@ namespace Postal_indexing
             set { timetable = value; }
         }
 
+        public Field() 
+        {
 
+        }
 
-        public Field() { }
-
-        public Field(string country, string region, string district, string city, string code, string address, string status, string timetable)
+        public Field(string country, 
+            string region, 
+            string district, 
+            string city,
+            string code, 
+            string address, 
+            string status, 
+            string timetable)
         {
             this.country = country;
             this.region = region;
@@ -78,7 +93,13 @@ namespace Postal_indexing
 
         public override string ToString()
         {
-            return " Країна : " + Country + "\n" + " Область (край) : " + Region + "\n" + " Район : " + District + "\n" + " Населений пункт : " + City + "\n" + " Поштовий індекс : " + Code + "\n" + " Адреса відділення : " + Address + "\n" + " Статус відділення: " + Status + "\n" + " Графік роботи: " + Timetable + "\n";
+            return " Країна : " + Country + "\n" + " Область (край) : " + Region 
+                + "\n" + " Район : " + District 
+                + "\n" + " Населений пункт : " + City 
+                + "\n" + " Поштовий індекс : " + Code 
+                + "\n" + " Адреса відділення : "+ Address 
+                + "\n" + " Статус відділення: " + Status 
+                + "\n" + " Графік роботи: " + Timetable + "\n";
         }
     }
 }

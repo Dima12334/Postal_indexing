@@ -21,75 +21,88 @@ namespace Postal_indexing
     public partial class Add : Window
     {
         private Field _currentField = new Field();
+
         ApplicationContext db = new ApplicationContext();
+
         public Add(Field selectedField)
         {
             InitializeComponent();
 
             if (selectedField != null)
+            {
                 _currentField = selectedField;
+            }
 
             DataContext = _currentField;
         }
 
-        private void save_Click(object sender, RoutedEventArgs e)
+        private void ClickSave(object sender, RoutedEventArgs e)
         {
-            if (_currentField.Country.Length == 0 || _currentField.District.Length == 0 || _currentField.Address.Length == 0 || _currentField.City.Length == 0 || _currentField.Status.Length == 0 || _currentField.Timetable.Length == 0 || _currentField.Region.Length == 0 || _currentField.Code.Length == 0)
+            if (_currentField.Country.Length == 0 || _currentField.District.Length == 0 
+                || _currentField.Address.Length == 0 || _currentField.City.Length == 0 
+                || _currentField.Status.Length == 0 || _currentField.Timetable.Length == 0 
+                || _currentField.Region.Length == 0 || _currentField.Code.Length == 0)
             {
                 MessageBox.Show("Всі поля повинні бути заповнені!");
                 return;
             }
 
-            if (_currentField.Id == 0)
+            if (_currentField.Country.Length <= 30 && _currentField.District.Length <= 30 && _currentField.Address.Length <= 30 && _currentField.City.Length <= 30 && _currentField.Status.Length <= 30 && _currentField.Timetable.Length <= 30 && _currentField.Region.Length <= 30 && _currentField.Code.Length <= 30)
             {
-                db.Fields.Add(_currentField);
-                try
+                if (_currentField.Id == 0)
                 {
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
-            }                                          
-
-            if (_currentField.Id > 0)
-            {
-                var field = db.Fields.SingleOrDefault(x => x.Id == _currentField.Id);
-                field.Country = countryBox.Text;
-                field.Region = regionBox.Text;
-                field.District = districtBox.Text;
-                field.City = cityBox.Text;
-                field.Code = codeBox.Text;
-                field.Address = addressBox.Text;
-                field.Status = statusBox.Text;
-                field.Timetable = timetableBox.Text;
-                try
-                {                   
-                    db.SaveChanges();
-                    MessageBox.Show("Дані збережено!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Сталася помилка!");
-                    MessageBox.Show(ex.Message.ToString());
+                    db.Fields.Add(_currentField);
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message.ToString());
+                    }
                 }
 
-                Edit ed = new Edit();
-                ed.Show();
-                Close();
+                if (_currentField.Id > 0)
+                {
+                    var field = db.Fields.SingleOrDefault(x => x.Id == _currentField.Id);
+                    field.Country = CountryBox.Text;
+                    field.Region = RegionBox.Text;
+                    field.District = DistrictBox.Text;
+                    field.City = CityBox.Text;
+                    field.Code = CodeBox.Text;
+                    field.Address = AddressBox.Text;
+                    field.Status = StatusBox.Text;
+                    field.Timetable = TimetableBox.Text;
+                    try
+                    {
+                        db.SaveChanges();
+                        MessageBox.Show("Дані збережено!");
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show("Сталася помилка!");
+                        MessageBox.Show(exc.Message.ToString());
+                    }
+
+                    Edit edit = new Edit();
+                    edit.Show();
+                    Close();
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Кільскість символів у полі повинна будти від 0 до 30!");
+            }
         }
 
-        private void back_Click(object sender, RoutedEventArgs e)
+        private void ClickBack(object sender, RoutedEventArgs e)
         {
             Auth auth = new Auth();
             auth.Show();
             Close();
         }
 
-        private void main_page_Click(object sender, RoutedEventArgs e)
+        private void ClickMainPage(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();

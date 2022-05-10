@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postal_indexing"
         mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Icon="Resources\icon.jpg"
         Title="Вікно доповнення даних" Height="550" Width="1000"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -16,17 +18,17 @@
         <Label Content="Адреса відділення : " HorizontalAlignment="Left" Height="39" Margin="15,354,0,0" VerticalAlignment="Top" Width="188" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Статус відділення : " HorizontalAlignment="Left" Height="40" Margin="16,412,0,0" VerticalAlignment="Top" Width="188" FontFamily="Modern No. 20" FontSize="18"/>
         <Label Content="Графік роботи : " HorizontalAlignment="Left" Height="39" Margin="40,470,0,0" VerticalAlignment="Top" Width="144" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="countryBox" HorizontalAlignment="Left" Height="27" Margin="189,85,0,0" TextWrapping="Wrap" Text="{Binding Country}"  VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="regionBox" HorizontalAlignment="Left" Height="28" Margin="189,139,0,0" TextWrapping="Wrap" Text="{Binding Region}" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="districtBox" HorizontalAlignment="Left" Height="27" Margin="189,189,0,0" TextWrapping="Wrap" Text="{Binding District}" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="cityBox" HorizontalAlignment="Left" Height="28" Margin="189,244,0,0" TextWrapping="Wrap" Text="{Binding City}" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="codeBox" HorizontalAlignment="Left" Height="30" Margin="189,298,0,0" TextWrapping="Wrap" Text="{Binding Code}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
-        <TextBox x:Name="addressBox" HorizontalAlignment="Left" Height="28" Margin="189,354,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
-        <TextBox x:Name="statusBox" HorizontalAlignment="Left" Height="28" Margin="189,412,0,0" TextWrapping="Wrap" Text="{Binding Status}" VerticalAlignment="Top" Width="562" FontFamily="Modern No. 20" FontSize="18"/>
-        <TextBox x:Name="timetableBox" HorizontalAlignment="Left" Height="28" Margin="189,470,0,0" TextWrapping="Wrap" Text="{Binding Timetable}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
-        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="46" Margin="792,383,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="back_Click"/>
-        <Button x:Name="main_page" Content="Головна сторінка" HorizontalAlignment="Left" Height="46" Margin="792,308,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="main_page_Click"/>
-        <Button x:Name="save" Content="Зберегти" HorizontalAlignment="Left" Height="46" Margin="792,452,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="save_Click"></Button>
+        <TextBox x:Name="CountryBox" MaxLength="30" HorizontalAlignment="Left" Height="27" Margin="189,85,0,0" TextWrapping="Wrap" Text="{Binding Country}"  VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="RegionBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="189,139,0,0" TextWrapping="Wrap" Text="{Binding Region}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="DistrictBox" MaxLength="30" HorizontalAlignment="Left" Height="27" Margin="189,189,0,0" TextWrapping="Wrap" Text="{Binding District}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="CityBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="189,244,0,0" TextWrapping="Wrap" Text="{Binding City}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="CodeBox" MaxLength="30" HorizontalAlignment="Left" Height="30" Margin="189,298,0,0" TextWrapping="Wrap" Text="{Binding Code}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="AddressBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="189,354,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="StatusBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="189,412,0,0" TextWrapping="Wrap" Text="{Binding Status}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <TextBox x:Name="TimetableBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="189,470,0,0" TextWrapping="Wrap" Text="{Binding Timetable}" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18"/>
+        <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" Height="46" Margin="792,383,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickBack"/>
+        <Button x:Name="MainPageButton" Content="Головна сторінка" HorizontalAlignment="Left" Height="46" Margin="792,308,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickMainPage"/>
+        <Button x:Name="SaveButton" Content="Зберегти" HorizontalAlignment="Left" Height="46" Margin="792,452,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickSave"/>
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Center" Height="66" VerticalAlignment="Top" Width="1000" Background="#FF678CFD">
             <Label Content="Вікно доповнення даних поштової індексації" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="484" FontFamily="Modern No. 20" FontSize="22"/>
         </Border>

@@ -28,39 +28,25 @@ namespace Postal_indexing
             DGridFields.ItemsSource = fields;
         }
 
-        private void edit_Click(object sender, RoutedEventArgs e)
+        private void ClickEdit(object sender, RoutedEventArgs e)
         {           
             Add update = new Add((sender as Button).DataContext as Field);
             update.Show();
             Close();
         }
 
-        private void main_page_Click(object sender, RoutedEventArgs e)
+        private void ClickMainPage(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             Close();
         }
 
-        private void back_Click(object sender, RoutedEventArgs e)
+        private void ClickBack(object sender, RoutedEventArgs e)
         {
             Auth auth = new Auth();
             auth.Show();
             Close();
         }
-
-        //private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        //{
-        //    if (Visibility == Visibility.Visible)
-        //    {
-        //        using (ApplicationContext db = new ApplicationContext())
-        //        {
-        //            db.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-        //            DGridFields.ItemsSource = db.Fields.ToList();
-        //        }
-        //    }
-        //}
-
-        //IsVisibleChanged="Window_IsVisibleChanged" (xaml)
     }
 }
