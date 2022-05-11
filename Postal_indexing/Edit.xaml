@@ -14,7 +14,9 @@
             <Label Content="Вікно редагування даних поштової індексації" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="481" FontFamily="Modern No. 20" FontSize="22" Margin="0,26,0,0" RenderTransformOrigin="0.5,0.5"/>
         </Border>
         <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" Height="50" Margin="60,585,0,0" VerticalAlignment="Top" Width="170" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickBack"/>
-        <Button x:Name="MainPageButton" Content="Головна сторінка" HorizontalAlignment="Left" Height="50" Margin="1050,585,0,0" VerticalAlignment="Top" Width="190" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickMainPage"/>
+        <Button x:Name="MainPageButton" Content="Головна сторінка" HorizontalAlignment="Left" Height="50" Margin="295,585,0,0" VerticalAlignment="Top" Width="190" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickMainPage"/>
+        <Button x:Name="AddButton" Content="Доповнення даних" HorizontalAlignment="Center" Height="50" Margin="0,585,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickAdd"/>
+        <Button x:Name="DeleteButton" Content="Видалити" HorizontalAlignment="Left" Height="50" Margin="1050,585,0,0" VerticalAlignment="Top" Width="190" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickDelete"/>
         <DataGrid x:Name="DGridFields" Margin="10,87,10,105" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Країна" Binding="{Binding Country}" Width="110" FontFamily="Ariel" FontSize="18"></DataGridTextColumn>

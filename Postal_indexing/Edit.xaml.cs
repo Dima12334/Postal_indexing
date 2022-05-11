@@ -19,11 +19,12 @@ namespace Postal_indexing
     /// </summary>
     public partial class Edit : Window
     {
+        ApplicationContext db = new ApplicationContext();
+
         public Edit()
         {
             InitializeComponent();
 
-            ApplicationContext db = new ApplicationContext();
             List<Field> fields = db.Fields.ToList();
             DGridFields.ItemsSource = fields;
         }
@@ -47,6 +48,42 @@ namespace Postal_indexing
             Auth auth = new Auth();
             auth.Show();
             Close();
+        }
+
+        private void ClickAdd(object sender, RoutedEventArgs e)
+        {
+            Add update = new Add(null);
+            update.Show();
+            Close();
+        }
+
+        private void ClickDelete(object sender, RoutedEventArgs e)
+        {
+            var fieldsForRemoving = DGridFields.SelectedItems.Cast<Field>().ToList();
+
+            if (fieldsForRemoving.Count() > 0)
+            {
+                if (MessageBox.Show("Ви впевнені, що бажаєте видалати ці дані?", "Увага!",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        db.Fields.RemoveRange(fieldsForRemoving);
+                        db.SaveChanges();
+                        MessageBox.Show("Дані видалено!");
+
+                        DGridFields.ItemsSource = db.Fields.ToList();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Не вдалося видалити дані!");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Оберіть дані для видалення");
+            }
         }
     }
 }

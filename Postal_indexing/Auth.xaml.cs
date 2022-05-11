@@ -31,13 +31,6 @@ namespace Postal_indexing
             Close();
         }
 
-        public void ClickAdd(object sender, RoutedEventArgs e)
-        {
-            Add update = new Add(null);
-            update.Show();
-            Close();
-        }
-
         private void ClickAuth(object sender, RoutedEventArgs e)
         {
             string name = LoginBox.Text.Trim();
@@ -72,6 +65,13 @@ namespace Postal_indexing
         {
             Register reg = new Register();
             reg.Show();
+            Close();
+        }
+
+        private void ClickAdd(object sender, RoutedEventArgs e)
+        {
+            Add update = new Add(null);
+            update.Show();
             Close();
         }
 

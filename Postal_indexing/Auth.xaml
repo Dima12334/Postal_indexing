@@ -18,9 +18,9 @@
         <TextBox x:Name="LoginBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="172,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18" FontStretch="Normal"/>
         <PasswordBox x:Name="PassBox" MaxLength="30" HorizontalAlignment="Left" Height="28" Margin="172,226,0,0" VerticalAlignment="Top" Width="562" FontFamily="Arial" FontSize="18" />
         <Button x:Name="MainPageButton" Content="Головна сторінка" HorizontalAlignment="Center" Height="46" Margin="0,290,0,0" VerticalAlignment="Top" Width="176" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickMainPage"/>
-        <Button x:Name="AddButton" Content="Доповнення данних" HorizontalAlignment="Left" Height="46" Margin="426,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickAdd" Visibility="Hidden"/>
+        <Button x:Name="AddButton" Content="Доповнення даних" HorizontalAlignment="Left" Height="46" Margin="426,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickAdd" Visibility="Hidden"/>
         <Button x:Name="AuthButton" Content="Вхід" HorizontalAlignment="Left" Height="46" Margin="567,290,0,0" VerticalAlignment="Top" Width="167" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickAuth"/>
         <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" Height="46" Margin="68,290,0,0" VerticalAlignment="Top" Width="167" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickBack"/>
-        <Button x:Name="EditButton" Content="Редагування данних" HorizontalAlignment="Left" Height="46" Margin="172,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickEdit" Visibility="Hidden"/>
+        <Button x:Name="EditButton" Content="Редагування даних" HorizontalAlignment="Left" Height="46" Margin="172,361,0,0" VerticalAlignment="Top" Width="208" FontFamily="Modern No. 20" FontSize="20" Background="#FF678CFD" BorderBrush="#FFA7A7A7" Click="ClickEdit" Visibility="Hidden"/>
     </Grid>
 </Window>
