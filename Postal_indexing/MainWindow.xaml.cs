@@ -40,7 +40,7 @@ namespace Postal_indexing
             ListOfPostalDirectory.ItemsSource = fields.OrderBy(p => p.City).ToList();
         }
 
-        private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void ChangedTextSearch(object sender, TextChangedEventArgs e)
         {
             SearchUpdate();
         }

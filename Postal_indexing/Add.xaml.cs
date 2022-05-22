@@ -20,7 +20,7 @@ namespace Postal_indexing
     /// </summary>
     public partial class Add : Window
     {
-        private Field _currentField = new Field();
+        private Field currentField = new Field();
 
         ApplicationContext db = new ApplicationContext();
 
@@ -30,28 +30,28 @@ namespace Postal_indexing
 
             if (selectedField != null)
             {
-                _currentField = selectedField;
+                currentField = selectedField;
             }
 
-            DataContext = _currentField;
+            DataContext = currentField;
         }
 
         private void ClickSave(object sender, RoutedEventArgs e)
         {
-            if (_currentField.Country.Length == 0 || _currentField.District.Length == 0 
-                || _currentField.Address.Length == 0 || _currentField.City.Length == 0 
-                || _currentField.Status.Length == 0 || _currentField.Timetable.Length == 0 
-                || _currentField.Region.Length == 0 || _currentField.Code.Length == 0)
+            if (currentField.Country.Length == 0 || currentField.District.Length == 0 
+                || currentField.Address.Length == 0 || currentField.City.Length == 0 
+                || currentField.Status.Length == 0 || currentField.Timetable.Length == 0 
+                || currentField.Region.Length == 0 || currentField.Code.Length == 0)
             {
                 MessageBox.Show("Всі поля повинні бути заповнені!");
                 return;
             }
 
-            if (_currentField.Country.Length <= 30 && _currentField.District.Length <= 30 && _currentField.Address.Length <= 30 && _currentField.City.Length <= 30 && _currentField.Status.Length <= 30 && _currentField.Timetable.Length <= 30 && _currentField.Region.Length <= 30 && _currentField.Code.Length <= 30)
+            if (currentField.Country.Length <= 30 && currentField.District.Length <= 30 && currentField.Address.Length <= 30 && currentField.City.Length <= 30 && currentField.Status.Length <= 30 && currentField.Timetable.Length <= 30 && currentField.Region.Length <= 30 && currentField.Code.Length <= 30)
             {
-                if (_currentField.Id == 0)
+                if (currentField.Id == 0)
                 {
-                    db.Fields.Add(_currentField);
+                    db.Fields.Add(currentField);
                     try
                     {
                         db.SaveChanges();
@@ -62,9 +62,9 @@ namespace Postal_indexing
                     }
                 }
 
-                if (_currentField.Id > 0)
+                if (currentField.Id > 0)
                 {
-                    var field = db.Fields.SingleOrDefault(x => x.Id == _currentField.Id);
+                    var field = db.Fields.SingleOrDefault(x => x.Id == currentField.Id);
                     field.Country = CountryBox.Text;
                     field.Region = RegionBox.Text;
                     field.District = DistrictBox.Text;
