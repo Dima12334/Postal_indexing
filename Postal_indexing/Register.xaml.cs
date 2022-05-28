@@ -57,14 +57,13 @@ namespace Postal_indexing
                     MessageBox.Show("Заповніть пусті поля або поверніться на початкову сторінку");
                 }                          
             }
+            else if (authUser != null)
+            {
+                MessageBox.Show("Такий адмін уже існує!");
+            }
             else
             {
                 MessageBox.Show("Кільскість символів у полі повинна будти від 0 до 30!");
-            }
-
-            if (authUser != null)
-            {
-                MessageBox.Show("Такий адмін уже існує!");
             }
         }
 

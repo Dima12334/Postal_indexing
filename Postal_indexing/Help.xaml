@@ -13,7 +13,7 @@
         <Border BorderBrush="#FF678CFD" BorderThickness="1" HorizontalAlignment="Center" Height="90" VerticalAlignment="Top" Width="800" Background="#FF678CFD">
             <Label Content="Як користуватися програмою?" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="330" FontFamily="Arial" FontSize="22"/>
         </Border>
-        <Label Content="- Для пошуку НЕ потрібно заповнювати всі пусті поля;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="18" Margin="19,124,0,0"/>
+        <Label Content="- Для пошуку НЕ обов'язково заповнювати всі пусті поля;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" FontFamily="Arial" FontSize="18" Margin="19,124,0,0"/>
         <Label Content="- Всі поля мають обмеження кількості символів в 30 одиниць;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="541" FontFamily="Arial" FontSize="18" Margin="19,174,0,0"/>
         <Label Content="- На головній сторінці до результатів пошуку виведено всі дані поштової індексації;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="721" FontFamily="Arial" FontSize="18" Margin="19,217,0,0"/>
         <Label Content="- Для знаходження певних даних вам потрібно заповнити хоча б одне пусте поле;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="721" FontFamily="Arial" FontSize="18" Margin="19,263,0,0"/>
